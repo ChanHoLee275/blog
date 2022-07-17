@@ -58,14 +58,14 @@ const Profile: React.FC<ProfileProps> = ({ name, job, avatar }) => {
         </ProfileContent>
       </Container>
       <CardContent sx={{ display: 'flex' }}>
-        <a href="https://graceful-lizard-413.notion.site/c481d6b022d845498faa33d152248380">
+        <a href={process.env.REACT_APP_PROFILE_URL}>
           <Avatar
             src={resume}
             sx={{ width: '50px', height: '50px', margin: '10px' }}
             alt="resume"
           />
         </a>
-        <a href="https://www.github.com/ChanHoLee275">
+        <a href={process.env.REACT_APP_GITHUB_URL}>
           <Avatar
             src={github}
             sx={{ width: '50px', height: '50px', margin: '10px' }}
