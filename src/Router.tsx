@@ -1,12 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './component/Header';
 import Main from './page/Main';
 
 const Router = () => (
   <BrowserRouter>
     <Header />
-    <Route path="/" element={<Main />} />
+    <Routes>
+      <Route path="/blog" element={<Main />} />
+    </Routes>
   </BrowserRouter>
 );
 
