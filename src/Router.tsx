@@ -6,7 +6,11 @@ import List from './component/List';
 const Router = () => (
   <BrowserRouter>
     <Header />
-    <List></List>
+    <List>
+      <a href="https://www.flaticon.com/free-icons/growth" title="growth icons">
+        Growth icons created by Freepik - Flaticon
+      </a>
+    </List>
   </BrowserRouter>
 );
 

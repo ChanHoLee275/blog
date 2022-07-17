@@ -5,13 +5,13 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
 export interface ItemProps {
-    title: string;
-    abstract: string;
+  title: string;
+  abstract: string;
 }
 
-const Item : React.FC<ItemProps> = ({title, abstract}) => {
+const Item: React.FC<ItemProps> = ({ title, abstract }) => {
   return (
-    <Card sx={{ minWidth: 345, width: "60%", backgroundColor: "#f2f2f7" }}>
+    <Card sx={{ minWidth: 345, width: '60%', backgroundColor: '#f2f2f7', margin: '5px' }}>
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
@@ -24,6 +24,6 @@ const Item : React.FC<ItemProps> = ({title, abstract}) => {
       </CardActionArea>
     </Card>
   );
-}
+};
 
 export default Item;

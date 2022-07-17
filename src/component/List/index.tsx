@@ -1,15 +1,48 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import Item from './Item';
+import Profile from '../Profile';
+
+import avatar from '../../icons/success.png';
+import { Typography } from '@mui/material';
 
 const Container = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
 `;
 
-const List = () => <Container><Item title={"test"} abstract={"test"}/></Container>
+const TitleContainer = styled.div`
+  width: 60%;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+`;
+
+const List: React.FC<{ children: React.ReactNode }> = (props) => {
+  const { children } = props;
+  return (
+    <Container>
+      <TitleContainer>
+        <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
+          PROFILE
+        </Typography>
+      </TitleContainer>
+      <Profile name="이찬호" job="Software Engineer" avatar={avatar} />
+      <TitleContainer>
+        <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
+          POSTS
+        </Typography>
+      </TitleContainer>
+      <Item title={'test'} abstract={'test'} />
+      {children}
+    </Container>
+  );
+};
 
 export default List;
