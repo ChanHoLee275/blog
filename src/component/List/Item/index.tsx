@@ -11,7 +11,7 @@ export interface ItemProps {
 
 const Item: React.FC<ItemProps> = ({ title, abstract }) => {
   return (
-    <Card sx={{ minWidth: 345, width: '60%', backgroundColor: '#f2f2f7', margin: '5px' }}>
+    <Card sx={{ minWidth: 345, width: '60%', backgroundColor: '#f2f2f7', margin: '8px' }}>
       <CardActionArea>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

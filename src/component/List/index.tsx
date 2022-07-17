@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import Item from './Item';
+import Item, { ItemProps } from './Item';
 import Profile from '../Profile';
 
 import avatar from '../../icons/success.png';
@@ -24,6 +24,19 @@ const TitleContainer = styled.div`
   margin-bottom: 20px;
 `;
 
+const dummyData: ItemProps[] = [
+  { title: 'test', abstract: 'test' },
+  { title: 'test', abstract: 'test' },
+  { title: 'test', abstract: 'test' },
+  { title: 'test', abstract: 'test' },
+  { title: 'test', abstract: 'test' },
+  { title: 'test', abstract: 'test' },
+  { title: 'test', abstract: 'test' },
+  { title: 'test', abstract: 'test' },
+  { title: 'test', abstract: 'test' },
+  { title: 'test', abstract: 'test' },
+];
+
 const List: React.FC<{ children: React.ReactNode }> = (props) => {
   const { children } = props;
   return (
@@ -39,7 +52,15 @@ const List: React.FC<{ children: React.ReactNode }> = (props) => {
           POSTS
         </Typography>
       </TitleContainer>
-      <Item title={'test'} abstract={'test'} />
+      {dummyData.map((el, idx) => (
+        <Item title={el.title + `${idx}`} abstract={el.abstract + `${idx}`} />
+      ))}
+      {dummyData.map((el, idx) => (
+        <Item title={el.title + `${idx}`} abstract={el.abstract + `${idx}`} />
+      ))}
+      {dummyData.map((el, idx) => (
+        <Item title={el.title + `${idx}`} abstract={el.abstract + `${idx}`} />
+      ))}
       {children}
     </Container>
   );
