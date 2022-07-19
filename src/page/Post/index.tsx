@@ -19,6 +19,16 @@ const MarkDownStyle = styled.div`
   padding: 25px;
 `;
 
+const MarkdownBlockQuote = styled.blockquote`
+  border: 1px solid gray;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #b6b7b900;
+  border-left: 7px solid gray;
+`;
+
 const markdown = `
 # 제목
 ## 부제목 viewer
@@ -26,7 +36,7 @@ const markdown = `
 \`\`\`js
     const list = new Array(10);
 \`\`\`
->  👆 Use the toggle above to add the plugin.
+>👆 Use the toggle above to add the plugin.
 `;
 
 const Post = () => {
@@ -55,6 +65,9 @@ const Post = () => {
                   {children}
                 </code>
               );
+            },
+            blockquote({ children, ...props }) {
+              return <MarkdownBlockQuote {...props}>{children}</MarkdownBlockQuote>;
             },
           }}
         >
